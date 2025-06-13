@@ -1,0 +1,734 @@
+/*Fuentes*/
+@font-face {
+    font-family: 'Aventine';
+    src: url('./fuentes/Aventine Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Anthony Hunter';
+    src: url('./fuentes/Anthony Hunter.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables globales */
+:root {
+    --primary-color: #D4A373;
+    /* Beige suave */
+    --secondary-color: #E5DCCF;
+    /* Beige más claro */
+    --accent-color: #C9A06B;
+    /* Beige más cálido */
+    --text-color: #2C3E50;
+    --light-bg: #F7F4F1;
+    /* Fondo beige muy suave */
+    --white: #FFFFFF;
+}
+
+/* Estilos para el nombre de la clínica */
+.clinic-name {
+    font-family: 'Anthony Hunter', serif;
+    font-size: 1.5rem;
+    color: #bea685;
+    font-weight: normal;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+/* Estilos para el logo */
+.logo-image {
+    width: 60px;
+    height: 60px;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Artículo individual */
+/* Fondo general blanco */
+.articles-section {
+    background-color: #ffffff;
+    padding: 6rem 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Aventine', sans-serif;
+    font-size: 2rem;
+    color: #5b4234;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Franja de color para cada artículo */
+.article-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.article-box {
+    background-color: #e2d4cf;
+    width: 100%;
+    max-width: 1100px;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Contenido de artículo con imagen + texto */
+/* Sección general */
+.why-choose-us {
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #5b4234;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Fila completa */
+.feature-row {
+    display: flex;
+    width: 100%;
+    min-height: 450px;
+    background-color: #e4d6d0;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    /* Espacio entre bloques */
+}
+
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Imagen de fondo */
+.feature-image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contenedor de texto */
+.feature-text {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #4c3d37;
+    background-color: #e4d6d0;
+}
+
+.feature-text h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 90%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .feature-row,
+    .feature-row.reverse {
+        flex-direction: column;
+    }
+
+    .feature-text,
+    .feature-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .feature-text {
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+/* Responsive ajuste */
+@media (max-width: 768px) {
+
+    .article,
+    .article.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .article-image {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-title {
+        font-family: 'Aventine', serif;
+        font-size: 2.5rem;
+        color: #5b4234;
+        margin: 0 auto 3rem auto;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1px;
+        z-index: 10;
+        position: relative;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        top: 60px;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 0.8rem 2%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Servicios */
+    .services {
+        padding: 2rem 5%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Formulario */
+    .appointment-form {
+        padding: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 5%;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-bottom {
+        padding: 1rem 5%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.footer-subtitle {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+.logo i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero */
+#hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Imagen de fondo directa en el HTML */
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Contenido centrado encima de la imagen */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    text-align: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #hero {
+        height: 80vh;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+
+    .hero-content p {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+    }
+
+    .cta-button {
+        font-size: clamp(0.8rem, 3vw, 0.9rem);
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+
+/* Servicios */
+.services {
+    padding: 5rem 10%;
+    background: var(--light-bg);
+}
+
+.services h2 {
+    font-family: 'Aventine', serif;
+    font-size: 2.5rem;
+    margin: 0 auto 3rem auto;
+    color: #5b4234;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 10;
+    position: relative;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Formulario */
+/* SECCIÓN GENERAL */
+.appointment {
+    padding: 5rem 10%;
+    background: #ffffff;
+}
+
+/* TÍTULO */
+.nav-title {
+    font-family: 'Aventine', serif;
+    font-size: 2.5rem;
+    color: #5b4234;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* CONTENEDOR DEL FORMULARIO */
+.appointment-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #faf7f5;
+    padding: 2.5rem;
+    border-radius: 12px;
+}
+
+/* Estilos para la sección del logo */
+.logo-section {
+    text-align: center;
+    padding: 3rem 0;
+    background: #fff;
+}
+
+.logo-container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* DISTRIBUCIÓN DE LOS CAMPOS */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* GRUPO DE FORMULARIO */
+.form-group {
+    position: relative;
+}
+
+/* CAMPOS INPUT Y SELECT */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1.2rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: transparent;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+/* FOCUS */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #5b4234;
+    outline: none;
+}
+
+/* ETIQUETA FLOTANTE */
+.form-group label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7a6e68;
+    background: #faf7f5;
+    padding: 0 0.4rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 1rem;
+}
+
+/* ANIMACIÓN DE ETIQUETA */
+.form-group input:focus~label,
+.form-group input:valid~label,
+.form-group select:focus~label,
+.form-group select:valid~label {
+    top: -0.6rem;
+    left: 0.8rem;
+    font-size: 0.8rem;
+    color: #5b4234;
+    background: #faf7f5;
+}
+
+/* CAMPO DE FECHA */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    padding: 1.2rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #4a3f3c;
+}
+
+/* ICONO DEL CALENDARIO */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url('https://cdn-icons-png.flaticon.com/512/747/747310.png') no-repeat center;
+    background-size: 18px 18px;
+    padding: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* Evita estilos raros en Firefox */
+input[type="date"]::-moz-focus-inner {
+    border: 0;
+}
+
+
+/* BOTÓN DE ENVÍO */
+.submit-button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    background:#d4a373;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: inherit;
+}
+
+.submit-button:hover {
+    background: #856353;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .appointment-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 4rem 10% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
